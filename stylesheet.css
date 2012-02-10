@@ -423,3 +423,9 @@ SPAN.errorText {
   float: left;
   margin-right: 5px;
 }
+
+.productDesc {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: thin solid #eee;
+}

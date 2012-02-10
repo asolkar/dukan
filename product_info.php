@@ -69,7 +69,7 @@
       if (tep_db_num_rows($pi_query) > 0) {
 ?>
 
-    <div id="piGal" style="float: right;">
+    <div id="piGal" style="float: left;">
       <ul>
 
 <?php
@@ -114,7 +114,7 @@ $('#piGal ul').bxGallery({
       } else {
 ?>
 
-    <div id="piGal" style="float: right;">
+    <div id="piGal" style="float: left;">
       <?php echo '<a href="' . tep_href_link(DIR_WS_IMAGES . $product_info['products_image']) . '" target="_blank" rel="fancybox">' . tep_image(DIR_WS_IMAGES . $product_info['products_image'], addslashes($product_info['products_name']), null, null, 'hspace="5" vspace="5"') . '</a>'; ?>
     </div>
 
@@ -131,23 +131,8 @@ $("#piGal a[rel^='fancybox']").fancybox({
 <?php
     }
 ?>
-  <div class="buttonSet space_top">
-<?php
-  if($product_info['products_quantity'] <= 0 || $product_info['products_status']==0) {
-?>
-    <span class="buttonAction"><?php echo tep_draw_button(IMAGE_BUTTON_OUT_OF_STOCK, 'alert', $_SERVER["REQUEST_URI"], 'primary', array("disabled" => "1")); ?></span>
-<?php
-  } else {
-?>
-    <span class="buttonAction"><?php echo tep_draw_hidden_field('products_id', $product_info['products_id']) . tep_draw_button(IMAGE_BUTTON_IN_CART, 'cart', null, 'primary'); ?></span>
-<?php
-  }
-?>
-    <?php //echo tep_draw_button(IMAGE_BUTTON_REVIEWS . (($reviews['count'] > 0) ? ' (' . $reviews['count'] . ')' : ''), 'comment', tep_href_link(FILENAME_PRODUCT_REVIEWS, tep_get_all_get_params())); ?>
-  </div>
-
-<?php echo stripslashes($product_info['products_description']); ?>
-
+  <div class="buttonsOptions">
+  <div class="productOptions" style="float: right;">
 <?php
 //++++ QT Pro: End Changed Code
     $products_attributes_query = tep_db_query("select count(*) as total from " . TABLE_PRODUCTS_OPTIONS . " popt, " . TABLE_PRODUCTS_ATTRIBUTES . " patrib where patrib.products_id='" . (int)$HTTP_GET_VARS['products_id'] . "' and patrib.options_id = popt.products_options_id and popt.language_id = '" . (int)$languages_id . "'");
@@ -170,7 +155,27 @@ if(PRODINFO_ATTRIBUTE_DISPLAY_STOCK_LIST == 'True'): require(DIR_WS_MODULES . "q
 
 //++++ QT Pro: End Changed Code
 ?>
-
+  </div>
+    <div style="clear: both;"></div>
+  <div class="buttonSet space_top" style="float: right;">
+<?php
+  if($product_info['products_quantity'] <= 0 || $product_info['products_status']==0) {
+?>
+    <span class="buttonAction"><?php echo tep_draw_button(IMAGE_BUTTON_OUT_OF_STOCK, 'alert', $_SERVER["REQUEST_URI"], 'primary', array("disabled" => "1")); ?></span>
+<?php
+  } else {
+?>
+    <span class="buttonAction"><?php echo tep_draw_hidden_field('products_id', $product_info['products_id']) . tep_draw_button(IMAGE_BUTTON_IN_CART, 'cart', null, 'primary'); ?></span>
+<?php
+  }
+?>
+    <?php //echo tep_draw_button(IMAGE_BUTTON_REVIEWS . (($reviews['count'] > 0) ? ' (' . $reviews['count'] . ')' : ''), 'comment', tep_href_link(FILENAME_PRODUCT_REVIEWS, tep_get_all_get_params())); ?>
+  </div>
+  </div>
+    <div style="clear: both;"></div>
+  <div class="productDesc">
+<?php echo stripslashes($product_info['products_description']); ?>
+  </div>
     <div style="clear: both;"></div>
 
 <?php
