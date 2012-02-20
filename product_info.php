@@ -19,7 +19,7 @@
 
   require(DIR_WS_INCLUDES . 'template_top.php');
 
-  if ($product_check['total'] < 1) {
+if ($product_check['total'] < 1) {
 ?>
 
 <div class="contentContainer">
@@ -55,7 +55,7 @@
 <?php echo tep_draw_form('cart_quantity', tep_href_link(FILENAME_PRODUCT_INFO, tep_get_all_get_params(array('action')) . 'action=add_product')); ?>
 
 <div>
-  <h1 style="float: right;"><?php echo $products_price; ?></h1>
+   <h1 style="float: right;"><?php echo $products_price; ?></h1>
   <h1><?php echo $products_name; ?></h1>
 </div>
 
@@ -111,7 +111,7 @@ $('#piGal ul').bxGallery({
 </script>
 
 <?php
-      } else {
+    } else {
 ?>
 
     <div id="piGal" style="float: left;">
@@ -146,10 +146,11 @@ $("#piGal a[rel^='fancybox']").fancybox({
       echo $pad->draw();
 //++++ QT Pro
     ?>
-
+</div>
 <?php
      }
 //++++ QT Pro:
+
 //Display a table with which attributecombinations is on stock to the customer?
 if(PRODINFO_ATTRIBUTE_DISPLAY_STOCK_LIST == 'True'): require(DIR_WS_MODULES . "qtpro_stock_table.php"); endif;
 
