@@ -428,18 +428,26 @@ SPAN.errorText {
   margin-top: 10px;
   padding-top: 10px;
   border-top: thin solid #eee;
+}
 
 .left {
-width:325px;
-float:left;
+  width:325px;
+  float:left;
 }
 
 .center {
-width:600px;
-float:left;
+  width:600px;
+  float:left;
 }
 
 .right {
-width:600px;
-float:left;
+  width:600px;
+  float:left;
+}
+
+.productOptions {
+  padding: 5px;
+  float: right;
+  width: 60%;
+  background-color: #eee;
 }

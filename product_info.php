@@ -132,7 +132,7 @@ $("#piGal a[rel^='fancybox']").fancybox({
     }
 ?>
   <div class="buttonsOptions">
-  <div class="productOptions" style="float: right;">
+  <div class="productOptions">
 <?php
 //++++ QT Pro: End Changed Code
     $products_attributes_query = tep_db_query("select count(*) as total from " . TABLE_PRODUCTS_OPTIONS . " popt, " . TABLE_PRODUCTS_ATTRIBUTES . " patrib where patrib.products_id='" . (int)$HTTP_GET_VARS['products_id'] . "' and patrib.options_id = popt.products_options_id and popt.language_id = '" . (int)$languages_id . "'");
@@ -203,8 +203,6 @@ if(PRODINFO_ATTRIBUTE_DISPLAY_STOCK_LIST == 'True'): require(DIR_WS_MODULES . "q
       include(DIR_WS_MODULES . FILENAME_ALSO_PURCHASED_PRODUCTS);
     }
 ?>
-
-</div>
 
 </form>
 

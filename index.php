@@ -183,7 +183,7 @@ ul.lof-main-wapper > li {
 
 
 </div>
-  <div id="miniCatContent" class="bottomContent grid_24 alpha omega">
+<div id="miniCatContent" class="bottomContent grid_24 alpha omega">
 <?php
 //$bottom_boxes = array ('specials', 'features');
       $bottom_boxes = array ('features');
